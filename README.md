@@ -25,7 +25,7 @@
 플레이어의 선택지에 따라 스토리가 분기되며, 서로 다른 두 가지 결말을 맞이하게 됩니다.
 
 ### 1. 배드 엔딩 (Bad Ending)
-<video src="./기억의문너머_End_1.mp4" controls="controls" width="100%"></video>
+![Bad Ending](http://github.com/lalunru/unity-2d-adventure-memory/blob/master/assets/%EA%B8%B0%EC%96%B5%EC%9D%98%EB%AC%B8%EB%84%88%EB%A8%B8_End_1.mp4)
 
 ### 2. 진 엔딩 (True Ending)
-<video src="./기억의문너머_End_2.mp4" controls="controls" width="100%"></video>
+![True Ending](http://github.com/lalunru/unity-2d-adventure-memory/blob/master/assets/%EA%B8%B0%EC%96%B5%EC%9D%98%EB%AC%B8%EB%84%88%EB%A8%B8_End_2.mp4)
