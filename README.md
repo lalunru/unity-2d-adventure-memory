@@ -1,31 +1,79 @@
-# Beyond the Door of Memory (기억의 문 너머)
+# Beyond the Door of Memory
 
-## 프로젝트 개요
-'기억의 문 너머'는 무의식 속 꿈의 공간을 배경으로, 흩어진 기억의 조각을 수집하며 숨겨진 진실에 다가가는 2D 감정 서사형 어드벤처 게임입니다. 플레이어의 선택에 따라 결말이 달라지는 다중 엔딩 시스템을 채택하여 깊은 몰입감과 리플레이 가치를 제공합니다.
+> 한국어 설명은 [여기](#korean)를 참고하세요.
 
-## 기술 스택 및 환경
-* **Engine:** Unity (2D)
-* **Language:** C#
-* **Platform:** PC (Windows)
+A 2D emotional narrative adventure game built in Unity —  
+collect fragments of lost memory in a dreamlike subconscious world  
+and uncover the hidden truth, with **multiple endings shaped by your choices**.
 
-## 핵심 플레이 및 레벨 디자인
-각 스테이지(기억의 파편)마다 플레이어의 심리를 압박하는 고유한 기믹과 장애물을 설계했습니다.
-1. **추억의 공원 (난이도: 쉬움):** 기본적인 조작(걷기, 상호작용)을 익히는 튜토리얼 공간
-2. **다툼이 있었던 날 (난이도: 중간):** 맵에 흩어진 '깨진 거울 파편'과 충돌 시 카메라 쉐이크(Camera Shake) 연출을 통해 심리적 충격을 시각화
-3. **사고 현장 (난이도: 어려움):** 플레이어를 추적하는 '왜곡된 기억(적)' 등장. 시야를 피해 숨고 상호작용하는 잠입 요소 적용 (3회 피격 시 Game Over)
-4. **침묵 (난이도: 어려움):** 일정 주기마다 맵 전체가 암전(정전)되며, 목표 아이템(기억 조각)의 위치가 무작위로 재배치되는 변수 창출
+---
 
-## 주요 구현 기능
-* **다중 엔딩 및 씬(Scene) 제어:** 대화창 및 선택지 UI를 구성하고, 플레이어의 선택 값에 따라 씬 전환 및 스토리 분기가 동적으로 이루어지는 시스템
-* **AI 추적 시스템:** 특정 스테이지에서 플레이어의 위치를 인식하고 추적하는 몬스터(왜곡된 기억)의 인공지능 로직 구현
-* **동적 환경 변화 알고리즘:** 암전 이벤트 발생 시 타이머를 제어하고, 아이템의 좌표(Transform)를 난수로 재배치하여 난이도를 실시간으로 조절
-* **시각적 피드백 연출:** 장애물 충돌 시 물리적 타격감과 긴장감을 극대화하기 위한 카메라 흔들림(Camera Shake) 효과 스크립트 적용
+## Gameplay & Level Design
 
-## 엔딩 영상
-플레이어의 선택지에 따라 스토리가 분기되며, 서로 다른 두 가지 결말을 맞이하게 됩니다.
+Each stage represents a shard of memory, designed with a unique psychological gimmick
+to pressure the player emotionally and mechanically.
 
-### 1. 배드 엔딩 (Bad Ending)
-![Bad Ending](http://github.com/lalunru/unity-2d-adventure-memory/blob/master/assets/%EA%B8%B0%EC%96%B5%EC%9D%98%EB%AC%B8%EB%84%88%EB%A8%B8_End_1.mp4)
+| Stage | Difficulty | Mechanic |
+|---|---|---|
+| Park of Memories | Easy | Tutorial — walking, interaction basics |
+| The Day of the Argument | Medium | Broken mirror fragments trigger **camera shake** on collision — visualizing psychological trauma |
+| The Accident Scene | Hard | Stealth — evade a pursuing **"Distorted Memory"** enemy. 3 hits = Game Over |
+| Silence | Hard | Periodic **full-map blackouts** + random repositioning of memory fragment items |
 
-### 2. 진 엔딩 (True Ending)
-![True Ending](http://github.com/lalunru/unity-2d-adventure-memory/blob/master/assets/%EA%B8%B0%EC%96%B5%EC%9D%98%EB%AC%B8%EB%84%88%EB%A8%B8_End_2.mp4)
+---
+
+## Key Systems
+
+**Multiple Ending & Scene Control**
+Player choices are tracked as state values. Dialogue UI drives branching scene transitions dynamically — the same choice node can route to different story paths depending on accumulated state.
+
+**AI Pursuit System**
+The "Distorted Memory" enemy detects the player's position within a defined range and pursues using a custom tracking logic. The player must use the environment to break line-of-detection.
+
+**Dynamic Environment Algorithm**
+The blackout event (Stage 4) runs a timer-controlled coroutine that triggers darkness, then uses `Random.Range` to reassign item `Transform` positions — creating a live difficulty spike without level reloads.
+
+**Visual Feedback**
+Camera shake script activates on obstacle collision, amplifying physical impact and tension through screen-space displacement.
+
+---
+
+## Endings
+
+Player choices branch the story toward one of two endings.
+
+### Bad Ending
+https://github.com/lalunru/unity-2d-adventure-memory/blob/master/assets/%EA%B8%B0%EC%96%B5%EC%9D%98%EB%AC%B8%EB%84%88%EB%A8%B8_End_1.mp4
+
+### True Ending
+https://github.com/lalunru/unity-2d-adventure-memory/blob/master/assets/%EA%B8%B0%EC%96%B5%EC%9D%98%EB%AC%B8%EB%84%88%EB%A8%B8_End_2.mp4
+
+---
+
+## Tech Stack
+
+| | |
+|---|---|
+| Engine | Unity 2D |
+| Language | C# |
+| Platform | PC (Windows) |
+
+---
+
+## License
+
+This project was developed as a team academic project.  
+Assets and story content are not licensed for redistribution.
+
+---
+
+<a name="korean"></a>
+## 한국어 요약
+
+무의식 속 꿈의 공간을 배경으로 흩어진 기억의 조각을 수집하며 숨겨진 진실에 다가가는 2D 감정 서사형 어드벤처 게임입니다. 플레이어의 선택에 따라 결말이 달라지는 다중 엔딩 시스템을 채택했습니다.
+
+**핵심 구현**
+- 선택지 기반 씬 전환 및 스토리 분기 시스템
+- AI 추적 몬스터 (잠입 요소)
+- 암전 + 아이템 랜덤 재배치 동적 환경 알고리즘
+- 카메라 쉐이크 시각적 피드백
