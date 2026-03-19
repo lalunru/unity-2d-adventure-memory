@@ -1,3 +1,6 @@
 # Unity 빌드 결과물 언어 통계에서 제외
 *.dll linguist-vendored
 *.exe linguist-vendored
+25-1 Game_Data/** linguist-vendored
+25-1 Game_BurstDebugInformation_DoNotShip/** linguist-vendored
+MonoBleedingEdge/** linguist-vendored
