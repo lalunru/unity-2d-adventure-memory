@@ -1,5 +1,3 @@
 # Unity 빌드 결과물 언어 통계에서 제외
 *.dll linguist-vendored
 *.exe linguist-vendored
-Line0/TEST1_Data/** linguist-vendored
-Line0/MonoBleedingEdge/** linguist-vendored
